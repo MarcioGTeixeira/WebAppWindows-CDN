@@ -39,11 +39,3 @@ steps:
   displayName: 'Install the Bridgecrew CLI'
 - script: bridgecrew -d <directory> --bc-api-key <key> --repo-id <org/repo>  --branch <branch>
   displayName: 'Scan with Bridgecrew'
-
-# publicando o artefato para implantação
-- task: PublishPipelineArtifact@1
-  displayName: "public artifact"
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'name-artifact'
-    publishLocation: 'pipeline'
